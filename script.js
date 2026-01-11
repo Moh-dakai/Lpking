@@ -40,7 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
             }
+            // Close mobile menu after clicking a link
+            const navbarNav = document.querySelector('.navbar-nav');
+            const hamburgerBtn = document.getElementById('hamburger');
+            navbarNav.classList.remove('active');
+            hamburgerBtn.classList.remove('active');
         });
+    });
+
+    // Hamburger Menu Toggle
+    const hamburgerBtn = document.getElementById('hamburger');
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    hamburgerBtn.addEventListener('click', function() {
+        navbarNav.classList.toggle('active');
+        hamburgerBtn.classList.toggle('active');
     });
 });
 

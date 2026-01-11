@@ -620,7 +620,7 @@ body.light-mode .btn.secondary:hover {
     }
 
     .theme-toggle-btn {
-        display: none;
+        display: flex;
     }
 
     h1 {
