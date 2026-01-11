@@ -30,3 +30,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Theme Toggle Functionality
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
+const icon = themeToggleBtn.querySelector('i');
+
+// Check for saved theme preference or default to dark mode
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+}
+
+themeToggleBtn.addEventListener('click', function() {
+    body.classList.toggle('light-mode');
+    const isLightMode = body.classList.contains('light-mode');
+
+    // Toggle icon
+    if (isLightMode) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'light');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'dark');
+    }
+});
