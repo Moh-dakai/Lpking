@@ -11,6 +11,51 @@ body {
     color: #e0e0e0;
     background-color: #0a0a0a;
     overflow-x: hidden;
+    padding-top: 80px; /* Account for fixed navbar */
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    border-bottom: 1px solid #333;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.navbar-brand h2 {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+.navbar-nav li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav li a:hover {
+    color: #d4af37;
 }
 
 .container {
@@ -409,9 +454,6 @@ p {
 
 /* Theme Toggle Button */
 .theme-toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
     background: transparent;
     border: 2px solid #d4af37;
     color: #d4af37;
@@ -420,7 +462,9 @@ p {
     cursor: pointer;
     font-size: 1.2rem;
     transition: all 0.3s ease;
-    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .theme-toggle-btn:hover {
@@ -516,6 +560,22 @@ body.light-mode .btn.secondary:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .theme-toggle-btn {
+        align-self: flex-end;
+    }
+
     h1 {
         font-size: 2rem;
     }
