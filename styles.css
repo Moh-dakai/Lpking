@@ -452,6 +452,37 @@ p {
     color: #d4af37;
 }
 
+/* Hamburger Button */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #d4af37;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger-btn.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Theme Toggle Button */
 .theme-toggle-btn {
     background: transparent;
@@ -561,19 +592,35 @@ body.light-mode .btn.secondary:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar .container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 1rem;
     }
 
     .navbar-nav {
+        position: fixed;
+        left: -100%;
+        top: 80px;
         flex-direction: column;
-        gap: 1rem;
+        background-color: rgba(10, 10, 10, 0.95);
+        width: 100%;
         text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        gap: 2rem;
+        z-index: 998;
+    }
+
+    .navbar-nav.active {
+        left: 0;
+    }
+
+    .hamburger-btn {
+        display: flex;
     }
 
     .theme-toggle-btn {
-        align-self: flex-end;
+        display: none;
     }
 
     h1 {
