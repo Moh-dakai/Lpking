@@ -347,22 +347,23 @@ p {
     text-align: center;
 }
 
-.mockup {
-    background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
-    border-radius: 15px;
-    padding: 60px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: inline-block;
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 100%;
 }
 
-.mockup i {
-    font-size: 4rem;
-    color: #d4af37;
-    margin-bottom: 1rem;
+.product-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
 }
 
-.mockup p {
-    color: #888;
+.product-gallery img:hover {
+    transform: scale(1.05);
 }
 
 /* Authority Section */
