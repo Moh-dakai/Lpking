@@ -275,95 +275,41 @@ p {
     margin-bottom: 3rem;
 }
 
-.product-layout {
+.products-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-.product-info h3 {
-    color: #d4af37;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.product-features {
-    list-style: none;
-    margin: 2rem 0;
-}
-
-.product-features li {
-    margin-bottom: 0.5rem;
-    padding-left: 20px;
-    position: relative;
-}
-
-.product-features li::before {
-    content: '★';
-    color: #d4af37;
-    position: absolute;
-    left: 0;
-}
-
-.pricing-toggle {
-    display: flex;
-    margin: 2rem 0;
-    background: #2a2a2a;
-    border-radius: 25px;
-    padding: 5px;
-}
-
-.toggle-btn {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: #b0b0b0;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.toggle-btn.active {
-    background: #d4af37;
-    color: #000;
-}
-
-.pricing-display {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #d4af37;
-    margin: 1rem 0;
-}
-
-.micro-copy {
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 1rem;
-}
-
-.product-image {
-    text-align: center;
-}
-
-.product-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 100%;
-}
-
-.product-gallery img {
-    width: 100%;
-    height: auto;
+.product-card {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    text-align: center;
 }
 
-.product-gallery img:hover {
-    transform: scale(1.05);
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.product-card h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.product-card p {
+    margin-bottom: 1.5rem;
+    color: #b0b0b0;
 }
 
 /* Authority Section */
@@ -556,8 +502,8 @@ body.light-mode .service-card {
     background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
 }
 
-body.light-mode .mockup {
-    background: linear-gradient(135deg, #e0e0e0, #d0d0d0);
+body.light-mode .product-card {
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
 }
 
 body.light-mode .theme-toggle-btn {
